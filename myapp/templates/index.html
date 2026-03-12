@@ -1,85 +1,113 @@
 {% extends 'base.html' %}
 
-{% block body %} 
+{% block body %}
 
-    <!-- Start Popup Mobile Menu  -->
-    <div class="d-block d-xl-none">
-        <div class="tmp-popup-mobile-menu">
-            <div class="inner">
-                <div class="header-top">
-                    <div class="logo">
-                        <a href="index.html" class="logo-area">
-                            <img class="logo-dark" src="assets/images/logo/logo-blue.svg" alt="logo">
-                            <img class="logo-white" src="assets/images/logo/logo-blue-white.svg" alt="logo">
-                        </a>
-                    </div>
-                    <div class="close-menu">
-                        <button class="close-button tmp-round-action-btn">
-                            <i class="fa-sharp fa-light fa-xmark"></i>
-                        </button>
-                    </div>
+<!-- Start Popup Mobile Menu  -->
+<div class="d-block d-xl-none">
+    <div class="tmp-popup-mobile-menu">
+        <div class="inner">
+            <div class="header-top">
+                <div class="logo">
+                    <a href="index.html" class="logo-area">
+                        <img class="logo-dark" src="assets/images/logo/logo-blue.svg" alt="logo">
+                        <img class="logo-white" src="assets/images/logo/logo-blue-white.svg" alt="logo">
+                    </a>
                 </div>
-
-                <ul class="tmp-mainmenu onepagenav-click">
-                    <li><a class="smoth-animation" href="#home">Home</a></li>
-                    <li><a class="smoth-animation" href="#service">Services</a></li>
-                    <li><a class="smoth-animation" href="#portfolio">Portfolio</a></li>
-                    <li><a class="smoth-animation" href="#resume">Resume</a></li>
-                    <li><a class="smoth-animation" href="#pricing">Pricing</a></li>
-                    <li><a class="smoth-animation" href="#blog">Blog</a></li>
-                    <li><a class="smoth-animation" href="#contacts">Contact</a></li>
-                </ul>
-
-                <!-- social sharea area -->
-                <div class="social-wrapper mt--40">
-                    <span class="subtitle">find with me</span>
-                    <div class="social-link">
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                    </div>
-                </div>
-                <!-- end -->
-
-            </div>
-        </div>
-    </div>
-    <!-- End Popup Mobile Menu  -->
-
-
-    <!-- tmp banner area start -->
-    <div class="tmp-banner-one-area model-style-banner with-instructor style-2" id="home" data-black-overlay="2">
-        <div class="container">
-            <div class="banner-one-main-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-lg-12 ">
-                        <div class="inner banner-model-15">
-                            <h1 class="title tmp-fade-in">
-                                Julian Tobias
-                            </h1>
-                            <p class="disc tmp-fade-in">
-                                German Super Model, Influencer & Youtuber</p>
-                        </div>
-                    </div>
+                <div class="close-menu">
+                    <button class="close-button tmp-round-action-btn">
+                        <i class="fa-sharp fa-light fa-xmark"></i>
+                    </button>
                 </div>
             </div>
-        </div>
-        <div class="social-area-wrapper-varticle">
-            <ul>
-                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+
+            <ul class="tmp-mainmenu onepagenav-click">
+                <li><a class="smoth-animation" href="#home">Home</a></li>
+                <li><a class="smoth-animation" href="#service">Services</a></li>
+                <li><a class="smoth-animation" href="#portfolio">Portfolio</a></li>
+                <li><a class="smoth-animation" href="#resume">Resume</a></li>
+                <li><a class="smoth-animation" href="#pricing">Pricing</a></li>
+                <li><a class="smoth-animation" href="#blog">Blog</a></li>
+                <li><a class="smoth-animation" href="#contacts">Contact</a></li>
             </ul>
-        </div>
-        <div class="hero-bg-video">
-            <video autoplay="" muted="" loop="" id="myVideo">
-                <source src="assets/images/video/model.mp4" type="video/mp4">
-            </video>
+
+            <!-- social sharea area -->
+            <div class="social-wrapper mt--40">
+                <span class="subtitle">find with me</span>
+                <div class="social-link">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <!-- end -->
+
         </div>
     </div>
-    <!-- tmp banner area end -->
+</div>
+<!-- End Popup Mobile Menu  -->
+
+
+<!-- tmp banner area start -->
+
+<div class="tmp-banner-one-area model-style-banner with-instructor style-2" id="home" data-black-overlay="2">
+    {% for i in tmpbanner %}
+    <div class="container">
+        <div class="banner-one-main-wrapper">
+            <div class="row align-items-center">
+                <div class="col-lg-12 ">
+                    <div class="inner banner-model-15">
+                        <h1 class="title tmp-fade-in">
+                            {{ i.name|safe }}
+                        </h1>
+                        <p class="disc tmp-fade-in">
+                            {{ i.position |safe}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="social-area-wrapper-varticle">
+        <ul>
+            <li><a href="{{ i.facebook }}" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+            <li><a href="{{ i.instagram }}" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="{{ i.tiktok }} " target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+            <li><a href="{{ i.linkedin }} " target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        </ul>
+    </div>
+    <img src="{{ i.image.url }}" alt="">
+    <div class="hero-bg-video">
+        <video autoplay="" muted="" loop="" id="myVideo">
+            <source src="{{ i.video }}" type="video/mp4">
+        </video>
+    </div>
+
+    {% endfor %}
+</div>
+<!-- tmp banner area end -->
+
+
+<!-- tmp text para start -->
+<div class="about-content-area">
+    {% for i in tmptext %}
+    <div class="container tmp-section-gapTop">
+        <div class="text-para-doc-wrap">
+            <h2 class="text-para-documents tmp-scroll-trigger tmp-fade-in inv-title-animation-wrap animation-order-1">
+                {{ i.text|safe }}
+            </h2>
+            <div class="right-bg-text-para">
+                <img src="{{ i.left_bg.url }}" alt="">
+            </div>
+            <div class="left-bg-text-para">
+                <img src="{{ i.right_bg.url }}" alt="">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<!-- tmp text para end -->
+
+
+
 
 {% endblock %}

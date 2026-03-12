@@ -16,3 +16,14 @@ class TmpBannerModel(models.Model):
 
     def __str__(self):
         return self.name
+    
+class TmpTextModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    text = RichTextField()
+    left_bg = models.ImageField(upload_to='TmpText/', null=True, blank=True)
+    right_bg = models.ImageField(upload_to='TmpText/', null=True, blank=True)
+
+    def __str__(self):
+        return self.text
+    
+

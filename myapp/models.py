@@ -33,4 +33,17 @@ class SectionTitleModel(models.Model):
 
     def __str__(self):
         return self.title
-   
+
+class CompanyAreaModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    img = RichTextField()
+    img_1 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_2 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_3 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_4 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_5 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_6 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_7 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    img_8 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    def __str__(self):
+        return self.img

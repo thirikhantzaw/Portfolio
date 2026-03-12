@@ -87,10 +87,8 @@
 <!-- tmp banner area end -->
 
 
+
 <!-- tmp text para start -->
-
-
-
 <div class="about-content-area">
     {% for i in tmptext %}
     <div class="container tmp-section-gapTop">
@@ -112,6 +110,7 @@
 
 <!-- section-title-for-header -->
 <div class="section-title-brand-area  tmp-section-gapTop">
+    {% for i in sectiontitle %}
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -119,18 +118,74 @@
                     <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
                         <span class="subtitle">Brand I have Work With</span>
                     </div>
-                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">You Can Find Me On
+                    <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">
+                        {{ i.title|safe }}
                     </h2>
-                    <p class="description section-sm tmp-scroll-trigger tmp-fade-in animation-order-3"> Business
-                        consulting
-                        consultants provide expert advice and guida
-                        businesses to help them improve their performance, efficiency, and organizational </p>
                 </div>
             </div>
         </div>
     </div>
+    {% endfor %}
 </div>
 <!-- section-title-for-header end -->
+
+
+<div class="our-supported-company-area">
+    {% for i in companyarea %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <img src="{{ i.img_1.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-2">
+                    <img src="{{ i.img_2.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-3">
+                    <img src="{{ i.img_3.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-4">
+                    <img src="{{ i.img_4.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-5">
+                    <img src="{{ i.img_5.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-6">
+                    <img src="{{ i.img_6.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-7">
+                    <img src="{{ i.img_7.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6">
+                <div class="support-company-logo tmp-scroll-trigger tmp-fade-in animation-order-8">
+                    <img src="{{ i.img_8.url }}"
+                        alt="Reeni - Personal Portfolio HTML Template">
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 
 
 {% endblock %}

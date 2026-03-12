@@ -27,3 +27,10 @@ class TmpTextModel(models.Model):
         return self.text
     
 
+class SectionTitleModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = RichTextField()
+
+    def __str__(self):
+        return self.title
+   

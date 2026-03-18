@@ -10,12 +10,24 @@ def HomePage(request):
     companyarea = CompanyAreaModel.objects.all().order_by('id')
     tmplatestservicearea = TpmLatestServiceAreaModel.objects.all()
     textservice = TextServiceModel.objects.all()
+    aboutdesign = AboutDesignModel.objects.all() 
+    aboutme = AboutMeModel.objects.all() 
+    business = BusinessModel.objects.all()
+    educationtitle = EducationTitleModel.objects.all()
+    education = EducationModel.objects.all()
+    experience = ExperienceModel.objects.all()
     context = {
         'tmpbanner' : tmpbanner,
         'tmptext' : tmptext,
         'sectiontitle' : sectiontitle,
         'companyarea' : companyarea,
         'tmplatestservicearea' : tmplatestservicearea,
-        'textservice' : textservice
+        'textservice' : textservice,
+        'aboutdesign' : aboutdesign,
+        'aboutme' : aboutme,
+        'business' : business,
+        'educationtitle' : educationtitle,
+        'education' : education,
+        'experience' :experience 
     }
     return render(request, 'index.html', context)

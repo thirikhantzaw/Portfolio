@@ -61,4 +61,62 @@ class TextServiceModel(models.Model):
     def __str__(self):
         return self.title
 
+class AboutDesignModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    dec = RichTextField()
 
+    def __str__(self):
+        return self.tag
+
+class AboutMeModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    title = RichTextField()
+    dec = RichTextField()
+
+    def __str__(self):
+        return self.title
+    
+class BusinessModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    image = models.ImageField(upload_to='Business/', null=True, blank=True)
+    tag = RichTextField()
+    title = RichTextField()
+
+    def __str__(self):
+        return self.tag
+    
+
+class EducationTitleModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    title = RichTextField()
+    dec = RichTextField()
+    t = RichTextField()
+
+    def __str__(self):
+        return self.title
+    
+
+class EducationModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    title = RichTextField()
+    dec = RichTextField()
+    
+    def __str__(self):
+        return self.title
+
+
+class ExperienceModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    image = models.ImageField(upload_to='Business/', null=True, blank=True)
+    tag = RichTextField()
+    title = RichTextField()
+    head = RichTextField()
+    text = RichTextField()
+    dec = RichTextField()
+    
+    def __str__(self):
+        return self.tag

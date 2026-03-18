@@ -36,14 +36,29 @@ class SectionTitleModel(models.Model):
 
 class CompanyAreaModel(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    img = RichTextField()
-    img_1 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_2 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_3 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_4 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_5 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_6 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_7 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
-    img_8 = models.ImageField(upload_to='TmpBanner', null=True, blank=True)
+    name = RichTextField()
+    image = models.ImageField(upload_to='CompanyArea/', null=True, blank=True)
+    link = models.URLField(null=True, blank=True)
+
     def __str__(self):
-        return self.img
+        return self.name
+    
+class TpmLatestServiceAreaModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    title = RichTextField()
+    dec = RichTextField()
+    image = models.ImageField(upload_to='TpmLatestServiceArea/', null=True, blank=True)
+
+    def __str__(self):
+        return self.tag
+
+class TextServiceModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = RichTextField()
+    dec = RichTextField()
+
+    def __str__(self):
+        return self.title
+
+

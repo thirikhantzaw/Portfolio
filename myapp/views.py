@@ -16,6 +16,8 @@ def HomePage(request):
     educationtitle = EducationTitleModel.objects.all()
     education = EducationModel.objects.all()
     experience = ExperienceModel.objects.all()
+    blogtitle = BlogTitleModel.objects.all()
+    blog = BlogModel.objects.all()
     context = {
         'tmpbanner' : tmpbanner,
         'tmptext' : tmptext,
@@ -28,6 +30,8 @@ def HomePage(request):
         'business' : business,
         'educationtitle' : educationtitle,
         'education' : education,
-        'experience' :experience 
+        'experience' :experience,
+        'blogtitle' : blogtitle,
+        'blog' : blog 
     }
     return render(request, 'index.html', context)

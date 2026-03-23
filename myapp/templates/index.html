@@ -270,8 +270,8 @@
             {% endfor %}
         </div>
         <div>
-            {% for i in education %}
             <div class="row g-5">
+                {% for i in education %}
                 <div class="col-lg-6 col-sm-6">
                     <div class="education-experience-card tmponhover tmp-scroll-trigger tmp-fade-in animation-order-1">
                         <h4 class="edu-sub-title">{{i.tag|safe}}</h4>
@@ -281,8 +281,8 @@
                         </p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
 
 
@@ -314,8 +314,8 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="experiences-wrap-right-content">
-                            <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1"
-                                src="{{i.image.url}}" alt="expert-img">
+                            <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="{{i.image.url}}"
+                                alt="expert-img">
                         </div>
                     </div>
                     {% endfor %}
@@ -325,6 +325,46 @@
     </div>
 </section>
 <!-- Tpm Education Experience Area End -->
+
+<!-- Tpm Blog and news Area Start -->
+<section class="blog-and-news-are tmp-section-gap" id="blog">
+    <div class="container">
+        <div class="section-head mb--60">
+            {% for i in blogtitle %}
+            <div class="section-sub-title center-title tmp-scroll-trigger tmp-fade-in animation-order-1">
+                <span class="subtitle">{{i.tag|safe}}</span>
+            </div>
+            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">{{i.title|safe}}</h2>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for i in blog %}
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="blog-card tmp-hover-link image-box-hover tmp-scroll-trigger tmp-fade-in animation-order-1">
+                    <div class="img-box">
+                        <a href="blog-details.html">
+                            <img class="w-100" src="{{i.image.url}}" alt="Blog Thumbnail">
+                        </a>
+                        <ul class="blog-tags">
+                            <li><span class="tag-icon"><i class="fa-regular fa-user"></i></span>Mesbah</li>
+                            <li><span class="tag-icon"><i class="fa-solid fa-calendar-days"></i></span>{{i.date|safe}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="blog-content-wrap">
+                        <h3 class="blog-title"><a class="link" href="blog-details.html">{{i.title|safe}}</a></h3>
+                        <div class="more-btn tmp-link-animation">
+                            <a href="blog-details.html" class="read-more-btn">Read More <span class="read-more-icon"><i
+                                        class="fa-solid fa-angle-right"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- Tpm Blog and news Area End -->
 
 
 {% endblock %}

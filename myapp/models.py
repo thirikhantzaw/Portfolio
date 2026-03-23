@@ -120,3 +120,23 @@ class ExperienceModel(models.Model):
     
     def __str__(self):
         return self.tag
+    
+
+class BlogTitleModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    tag = RichTextField()
+    title = RichTextField()
+
+    def __str__(self):
+        return self.title
+    
+
+class BlogModel(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = RichTextField()
+    image = models.ImageField(upload_to='Business/', null=True, blank=True)
+    dec = RichTextField(null=True, blank=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
